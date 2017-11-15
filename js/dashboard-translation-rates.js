@@ -2,6 +2,10 @@ var Translation={
 	'pt-br':{
 		/* texts into HTML entities */
 		'txt1':'Taxas de desmatamento',
+		'txt1a':'Mapa',
+		'txt1c':'Informações de ajuda para uso do painel',
+		'txt1d':'Veja o vídeo introdutório que mostra a interação de um usuário com as ferramentas do painel.',
+		'txt1e':'Fechar',
 		'txt2':'Incrementos de desmatamento',
 		'txt3':'Baixar Dados',
 		'txt4':'Imprimir',
@@ -70,6 +74,10 @@ var Translation={
 	'en':{
 		/* texts into HTML entities */
 		'txt1':'Deforestation rates',
+		'txt1a':'Map',
+		'txt1c':'Useful information to manage the dashboard.',
+		'txt1d':'Watch the introductory video to see how an user interact with dashboard tools.',
+		'txt1e':'Close',
 		'txt2':'Deforestation increments',
 		'txt3':'Download',
 		'txt4':'Print',
@@ -138,6 +146,10 @@ var Translation={
 	'es':{		
 		/* texts into HTML entities */
 		'txt1':'Tasas de deforestación',
+		'txt1a':'Mapa',
+		'txt1c':'Informações de ajuda para uso do painel',
+		'txt1d':'Mire el video introductorio para ver cómo un usuario interactúa con las herramientas del tablero.',
+		'txt1e':'Cerrar',
 		'txt2':'Incremento de deforestación',
 		'txt3':'Descargar datos',
 		'txt4':'Imprimir',

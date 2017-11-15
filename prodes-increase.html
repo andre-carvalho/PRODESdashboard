@@ -124,13 +124,15 @@
 		<div class="row">
 			<div class="col-md-6" id="chart3">
 				<div id="chart-by-mun">
-					<div id="title-chart-by-mun" class="all-charts-title"></div>
+					<span id="title-chart-by-mun" class="all-charts-title"></span>
+					<a href="#modal-container-filtered" role="button" data-toggle="modal" style="text-decoration: none;">
+						<span class="glyphicon glyphicon-search" aria-hidden="true" id="txt2a" title="Procurar um município."></span>
+					</a>
 					<div class="keep-space">
-						<div class="reset" style="visibility: hidden;"><b><span id="txt12">Filtro:</span></b> <span class="filter"></span>
+						<div class="reset" style="visibility: hidden;"><b><span id="txt12">Filtro:</span></b><span class="filter"></span>
 							<a href="javascript:graph.resetFilter('mun');"><span class="glyphicon glyphicon-trash" aria-hidden="true" id="txt13" title="Limpar este filtro."></span></a>
 						</div>
 						<div class="btn-download">
-							<a href="#modal-container-filtered" role="button" data-toggle="modal" style="text-decoration: none;"><span class="glyphicon glyphicon-filter" aria-hidden="true" id="txt2a" title="Procurar um município."></span></a>
 							<span onclick="downloadAsImage('chart-by-mun');" class="glyphicon glyphicon-download-alt" aria-hidden="true" id="dwn3" title="Baixar a imagem do gráfico em formato PNG."></span>
 						</div>
 					</div>
@@ -269,7 +271,7 @@
 									×
 								</button>
 								<h4 class="modal-title" id="filtered">
-									<span id="txt1f">Pesquisa municípios</span>
+									<span id="txt1f">Pesquisa de municípios</span>
 								</h4>
 							</div>
 							<div class="modal-body">
@@ -277,7 +279,7 @@
 								<div class="input-group input-group-sm" style="margin-bottom: 15px;">
 									<input id="search-county" type="text" class="form-control" placeholder="Search">
 									<div class="input-group-btn">
-										<button class="btn btn-default" onclick="utils.searchCounty()"><i class="glyphicon glyphicon-filter" style="color:gray"></i></button>
+										<button class="btn btn-default" onclick="utils.searchCounty()"><i class="glyphicon glyphicon-search" style="color:gray"></i></button>
 									</div>
 								</div>
 								<span id="txt1h" style="display:none;">Selecione um item na lista de municípios encontrados.</span>

@@ -2,6 +2,14 @@ var Translation={
 	'pt-br':{
 		/* texts into HTML entities */
 		'txt1':'Taxas de desmatamento',
+		'txt1a':'Mapa',
+		'txt1c':'Informações de ajuda para uso do painel',
+		'txt1d':'Veja o vídeo introdutório que mostra a interação de um usuário com as ferramentas do painel.',
+		'txt1e':'Fechar',
+		'txt1f':'Pesquisa de municípios',
+		'txt1g':'Encontre um município.',
+		'txt1h':'Selecione um item na lista de municípios encontrados.',
+		'txt1i':'Fechar',
 		'txt2':'Incrementos de desmatamento',
 		'txt3':'Baixar Dados',
 		'txt4':'Imprimir',
@@ -63,11 +71,21 @@ var Translation={
 		'tools': 'Ferramentas <span class="caret"></span>',
 		'help': 'Ajuda <span class="caret"></span>',
 		'no_value':'Sem valor',
-		'not_found':'Não encontrou item para esta pesquisa.'
+		'not_found':'Não encontrou item para esta pesquisa.',
+		'video': 'Video Introdutório',
+		'about': 'Sobre'
 	},
 	'en':{
 		/* texts into HTML entities */
 		'txt1':'Deforestation rates',
+		'txt1a':'Map',
+		'txt1c':'Useful information to manage the dashboard.',
+		'txt1d':'Watch the introductory video to see how an user can interact with dashboard tools.',
+		'txt1e':'Close',
+		'txt1f':'Municipalities search',
+		'txt1g':'Find a municipality.',
+		'txt1h':'Select an item on the resulted list of municipalities searched.',
+		'txt1i':'Close',
 		'txt2':'Deforestation increments',
 		'txt3':'Download Data',
 		'txt4':'Print',
@@ -129,11 +147,21 @@ var Translation={
 		'tools': 'Tools <span class="caret"></span>',
 		'help' : 'Help <span class="caret"></span>',
 		'no_value':'No value',
-		'not_found':'No search data to show'
+		'not_found':'No search data to show',
+		'video': 'Introductory Video',
+		'about': 'About'
 	},
 	'es':{		
 		/* texts into HTML entities */
 		'txt1':'Tasas de deforestación',
+		'txt1a':'Mapa',
+		'txt1c':'Información para administrar el panel.',
+		'txt1d':'Mire el video introductorio para ver cómo un usuario interactúa con las herramientas del panel.',
+		'txt1e':'Cerrar',
+		'txt1f':'Búsqueda de municipios',
+		'txt1g':'Encuentre un municipio.',
+		'txt1h':'Seleccione un artículo en la lista resultante de los municipios buscados.',
+		'txt1i':'Cerrar',
 		'txt2':'Incremento de deforestación',
 		'txt3':'Descargar datos',
 		'txt4':'Imprimir',
@@ -195,7 +223,9 @@ var Translation={
 		'tools':'Herramientas <span class="caret"></span>',
 		'help':'Ayuda <span class="caret"></span>',
 		'no_value':'Sin valor',
-		'not_found':'No encontró ningún resultado.'
+		'not_found':'No encontró ningún resultado.',
+		'video': 'Video Introductorio',
+		'about': 'Sobre'
 	}
 
 };

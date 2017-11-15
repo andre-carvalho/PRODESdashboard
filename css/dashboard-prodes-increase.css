@@ -46,6 +46,10 @@ body{
 	font-family: "Droid Sans";
 	font-size: 18px;
 }
+.glyphicon-search {
+    color: #000000 !important;
+    display: inline-block !important; 
+}
 .nav li.active #txt2{
 	color: black;
 	background-color: white;
