@@ -141,6 +141,9 @@ h4 a:hover,h4 a:focus {
 	margin-left: 2px;
 	margin-right: 2px;
 }
+.glyphicon-envelope{
+	font-size: 16px;
+}
 .navbar-right li a:hover,.navbar-right li a:focus{
 	background-color: inherit !important;
 	color: inherit !important;
