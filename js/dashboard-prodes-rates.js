@@ -419,6 +419,38 @@ var graph={
 			return localeBR.numberFormat(',1f')(d);
 		});
 
+		this.barRateByYear.addFilterHandler(function(filters, filter) {
+			filters.push(filter);
+			if(graph.barRateStatesByYear.hasFilter()) {
+				var oppositeFilters=graph.barRateStatesByYear.filters(),
+				found=false;
+				oppositeFilters.forEach(function(f){
+					if(filter==f){
+						found=true;
+					}
+				});
+				if(!found){
+					graph.barRateStatesByYear.filter(filter);
+				}
+			}else{
+				graph.barRateStatesByYear.filter(filter);
+			}
+			return filters;
+		});
+
+		this.barRateByYear.removeFilterHandler(function(filters, filter) {
+			graph.barRateStatesByYear.filterAll();
+			var pos=filters.indexOf(filter);
+			filters.splice(pos,1);
+			if(filters.length) {
+				filters.forEach(function(f){
+					graph.barRateStatesByYear.filter(f);
+				});
+			}
+			graph.barRateStatesByYear.redraw();
+			return filters;
+		});
+
 		/**
 		 * Starting the lines chart by States for rates per years.
 		 */
@@ -568,6 +600,38 @@ var graph={
 		this.barRateStatesByYear.yAxis().tickFormat(function(d) {
 			return localeBR.numberFormat(',1f')(d);
 		});
+
+		this.barRateStatesByYear.addFilterHandler(function(filters, filter) {
+			filters.push(filter);
+			if(graph.barRateByYear.hasFilter()) {
+				var oppositeFilters=graph.barRateByYear.filters(),
+				found=false;
+				oppositeFilters.forEach(function(f){
+					if(filter==f){
+						found=true;
+					}
+				});
+				if(!found){
+					graph.barRateByYear.filter(filter);
+				}
+			}else{
+				graph.barRateByYear.filter(filter);
+			}
+			return filters;
+		});
+
+		this.barRateStatesByYear.removeFilterHandler(function(filters, filter) {
+			graph.barRateByYear.filterAll();
+			var pos=filters.indexOf(filter);
+			filters.splice(pos,1);
+			if(filters.length) {
+				filters.forEach(function(f){
+					graph.barRateByYear.filter(f);
+				});
+			}
+			graph.barRateByYear.redraw();
+			return filters;
+		});
 		
 		this.barRateStatesByYear
 			.on("renderlet.a",function (chart) {
@@ -591,15 +655,11 @@ var graph={
 	 * Called from the UI controls to clear one specific filter.
 	 */
 	resetFilter: function(who) {
-		if(who=='year'){
+		if(who=='year' || who=='stackbar-state'){
 			graph.barRateByYear.filterAll();
-			//this.filters['barRateByYear']=null;
+			graph.barRateStatesByYear.filterAll();
 		}else if(who=='state'){
 			graph.pieTotalizedByState.filterAll();
-			//this.filters['pieTotalizedByState']=null;
-		}else if(who=='stackbar-state'){
-			graph.barRateStatesByYear.filterAll();
-			//this.filters['barRateStatesByYear']=null;
 		}
 		dc.redrawAll();
 	},
