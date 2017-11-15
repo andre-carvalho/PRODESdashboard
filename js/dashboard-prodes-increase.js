@@ -182,26 +182,25 @@ var graph={
 	 * Load configuration file before loading data.
 	 */
 	loadConfigurations: function(callback) {
-		
-		d3.json("config/config-increase.json", function(error, conf) {
-			if (error) {
-				console.log("Didn't load config file. Using default options.");
-			}else {
-				if(conf) {
-					graph.pallet=conf.pallet?conf.pallet:graph.pallet;
-					graph.darkPallet=conf.darkPallet?conf.darkPallet:graph.darkPallet;
-					graph.histogramColor=conf.histogramColor?conf.histogramColor:graph.histogramColor;
-					graph.darkHistogramColor=conf.darkHistogramColor?conf.darkHistogramColor:graph.darkHistogramColor;
-					graph.barTop10Color=conf.barTop10Color?conf.barTop10Color:graph.barTop10Color;
-					graph.darkBarTop10Color=conf.darkBarTop10Color?conf.darkBarTop10Color:graph.darkBarTop10Color;
-					graph.displayInfo=conf.displayInfo?conf.displayInfo:graph.displayInfo;
-					graph.displaySwapPanelButton=conf.displaySwapPanelButton?conf.displaySwapPanelButton:graph.displaySwapPanelButton;
-				}
-				utils.applyConfigurations();
+		graph.readConfigurationWithCallback(null, callback, config_increase);
+	},
+	readConfigurationWithCallback: function(error, callback, conf) {		
+		if (error) {
+			console.log("Didn't load config file. Using default options.");
+		}else {
+			if(conf) {
+				graph.pallet=conf.pallet?conf.pallet:graph.pallet;
+				graph.darkPallet=conf.darkPallet?conf.darkPallet:graph.darkPallet;
+				graph.histogramColor=conf.histogramColor?conf.histogramColor:graph.histogramColor;
+				graph.darkHistogramColor=conf.darkHistogramColor?conf.darkHistogramColor:graph.darkHistogramColor;
+				graph.barTop10Color=conf.barTop10Color?conf.barTop10Color:graph.barTop10Color;
+				graph.darkBarTop10Color=conf.darkBarTop10Color?conf.darkBarTop10Color:graph.darkBarTop10Color;
+				graph.displayInfo=conf.displayInfo?conf.displayInfo:graph.displayInfo;
+				graph.displaySwapPanelButton=conf.displaySwapPanelButton?conf.displaySwapPanelButton:graph.displaySwapPanelButton;
 			}
-			callback();
-		});
-		
+			utils.applyConfigurations();
+		}
+		callback();
 	},
 	setDimensions: function(dim) {
 		this.winWidth=dim.w;
@@ -249,9 +248,12 @@ var graph={
 	},
 	loadData: function() {
 		utils.loadingShow(true);
+		
 		// Download the deforestation data from PRODES WFS service.
-		// http://terrabrasilis.info/prodes-data/PRODES/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=PRODES:prodes_d&outputFormat=application%2Fjson
-		d3.json("data/prodes.json", graph.processData);
+		// http://terrabrasilis.info/fip-service/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=fip-project-prodes:prodes_d&outputFormat=application%2Fjson
+		
+		//d3.json("data/prodes.json", graph.processData);
+		graph.processData(null, prodes_increase_file);
 	},
 	processData: function(error, data) {
 		utils.loadingShow(false);
