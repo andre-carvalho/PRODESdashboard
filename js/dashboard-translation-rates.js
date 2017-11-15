@@ -69,7 +69,9 @@ var Translation={
 		'tools': 'Ferramentas <span class="caret"></span>',
 		'help' : 'Ajuda <span class="caret"></span>',
 		'video': 'Video Introdutório',
-		'about': 'Sobre'
+		'about': 'Sobre',
+		'contactus': 'Contato',
+		'tt-contactus': 'Envie-nos um e-mail com sugestões e dúvidas sobre o projeto PRODES (prodes@dpi.inpe.br)'
 	},
 	'en':{
 		/* texts into HTML entities */
@@ -141,7 +143,9 @@ var Translation={
 		'tools': 'Tools <span class="caret"></span>',
 		'help' : 'Help <span class="caret"></span>',
 		'video': 'Introductory Video',
-		'about': 'About'
+		'about': 'About',
+		'contactus': 'Contact us',
+		'tt-contactus': 'Send us an e-mail with suggestions or questions about the PRODES project (prodes@dpi.inpe.br)'
 	},
 	'es':{		
 		/* texts into HTML entities */
@@ -213,7 +217,9 @@ var Translation={
 		'tools': 'Herramientas <span class="caret"></span>',
 		'help': 'Ayuda <span class="caret"></span>',
 		'video': 'Video Introductorio',
-		'about': 'Sobre'
+		'about': 'Sobre',
+		'contactus': 'Contacto',
+		'tt-contactus': 'Envíenos un correo electrónico con sus ideas o dudas sobre el project PRODES (prodes@dpi.inpe.br)'
 	}
 
 };

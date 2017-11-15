@@ -7,7 +7,7 @@ var Translation={
 		'txt1d':'Veja o vídeo introdutório que mostra a interação de um usuário com as ferramentas do painel.',
 		'txt1e':'Fechar',
 		'txt1f':'Pesquisa de municípios',
-		'txt1g':'Encontre um município.',
+		'txt1g':'Encontre um município (não utilizar <strong>acentuação gráfica</strong>).',
 		'txt1h':'Selecione um item na lista de municípios encontrados.',
 		'txt1i':'Fechar',
 		'txt2':'Incrementos de desmatamento',
@@ -73,7 +73,9 @@ var Translation={
 		'no_value':'Sem valor',
 		'not_found':'Não encontrou item para esta pesquisa.',
 		'video': 'Video Introdutório',
-		'about': 'Sobre'
+		'about': 'Sobre',
+		'contactus': 'Contato',
+		'tt-contactus': 'Envie-nos um e-mail com sugestões e dúvidas sobre o projeto PRODES (prodes@dpi.inpe.br)'
 	},
 	'en':{
 		/* texts into HTML entities */
@@ -83,7 +85,7 @@ var Translation={
 		'txt1d':'Watch the introductory video to see how an user can interact with dashboard tools.',
 		'txt1e':'Close',
 		'txt1f':'Municipalities search',
-		'txt1g':'Find a municipality.',
+		'txt1g':'Find a municipality (do not use <strong>punctuation</strong>).',
 		'txt1h':'Select an item on the resulted list of municipalities searched.',
 		'txt1i':'Close',
 		'txt2':'Deforestation increments',
@@ -149,7 +151,9 @@ var Translation={
 		'no_value':'No value',
 		'not_found':'No search data to show',
 		'video': 'Introductory Video',
-		'about': 'About'
+		'about': 'About',
+		'contactus': 'Contact us',
+		'tt-contactus': 'Send us an e-mail with suggestions or questions about the PRODES project (prodes@dpi.inpe.br)'
 	},
 	'es':{		
 		/* texts into HTML entities */
@@ -159,7 +163,7 @@ var Translation={
 		'txt1d':'Mire el video introductorio para ver cómo un usuario interactúa con las herramientas del panel.',
 		'txt1e':'Cerrar',
 		'txt1f':'Búsqueda de municipios',
-		'txt1g':'Encuentre un municipio.',
+		'txt1g':'Encuentre un municipio (no usar <strong>acentuación</strong>).',
 		'txt1h':'Seleccione un artículo en la lista resultante de los municipios buscados.',
 		'txt1i':'Cerrar',
 		'txt2':'Incremento de deforestación',
@@ -225,7 +229,9 @@ var Translation={
 		'no_value':'Sin valor',
 		'not_found':'No encontró ningún resultado.',
 		'video': 'Video Introductorio',
-		'about': 'Sobre'
+		'about': 'Sobre',
+		'contactus': 'Contacto',
+		'tt-contactus': 'Envíenos un correo electrónico con sus ideas o dudas sobre el project PRODES (prodes@dpi.inpe.br)'
 	}
 
 };
