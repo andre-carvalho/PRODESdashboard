@@ -132,24 +132,25 @@ var graph={
 	 * Load configuration file before loading data.
 	 */
 	loadConfigurations: function(callback) {
-		
-		d3.json("config/config-rates.json", function(error, conf) {
-			if (error) {
-				console.log("Didn't load config file. Using default options.");
-			}else{
-				if(conf) {
-					graph.pallet=conf.pallet?conf.pallet:graph.pallet;
-					graph.darkPallet=conf.darkPallet?conf.darkPallet:graph.darkPallet;
-					graph.histogramColor=conf.histogramColor?conf.histogramColor:graph.histogramColor;
-					graph.darkHistogramColor=conf.darkHistogramColor?conf.darkHistogramColor:graph.darkHistogramColor;
-					graph.displayInfo=conf.displayInfo?conf.displayInfo:graph.displayInfo;
-					graph.displaySwapPanelButton=conf.displaySwapPanelButton?conf.displaySwapPanelButton:graph.displaySwapPanelButton;
-				}
-				utils.applyConfigurations();
+		graph.readConfigurationWithCallback(null, callback, config_rates);
+	},
+	readConfigurationWithCallback: function(error, callback, conf) {		
+		if (error) {
+			console.log("Didn't load config file. Using default options.");
+		}else {
+			if(conf) {
+				graph.pallet=conf.pallet?conf.pallet:graph.pallet;
+				graph.darkPallet=conf.darkPallet?conf.darkPallet:graph.darkPallet;
+				graph.histogramColor=conf.histogramColor?conf.histogramColor:graph.histogramColor;
+				graph.darkHistogramColor=conf.darkHistogramColor?conf.darkHistogramColor:graph.darkHistogramColor;
+				graph.barTop10Color=conf.barTop10Color?conf.barTop10Color:graph.barTop10Color;
+				graph.darkBarTop10Color=conf.darkBarTop10Color?conf.darkBarTop10Color:graph.darkBarTop10Color;
+				graph.displayInfo=conf.displayInfo?conf.displayInfo:graph.displayInfo;
+				graph.displaySwapPanelButton=conf.displaySwapPanelButton?conf.displaySwapPanelButton:graph.displaySwapPanelButton;
 			}
-			callback();
-		});
-		
+			utils.applyConfigurations();
+		}
+		callback();
 	},
 	getStates: function() {
 		var ufs=graph.ufDimension.group().all(),
@@ -222,19 +223,17 @@ var graph={
 	loadData: function() {
 		utils.loadingShow(true);
 		// download data in CSV format from PRODES WFS service.
-		// var url="http://terrabrasilis.info/fip-service/fip-project-prodes/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=fip-project-prodes:prodes_rates_d&outputFormat=csv";
+		// var url="http://terrabrasilis.info/fip-service/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=fip-project-prodes:prodes_rates_d&outputFormat=csv";
 		// d3.csv(url, graph.processData);
 
-		// load data from CSV file
-		d3.csv("data/prodes_rates_d.csv", graph.processData);
+		// load data from local CSV file
+		//d3.csv("data/prodes_rates_d.csv", graph.processData);
 		
 		// download data in JSON format from PRODES WFS service.
-		// var url="http://terrabrasilis.info/prodes-data/PRODES/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=PRODES:prodes_rates_d&outputFormat=application%2Fjson";
+		// var url="http://terrabrasilis.info/fip-service/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=fip-project-prodes:prodes_rates_d&outputFormat=application%2Fjson";
 		// d3.json(url, graph.processData);
 		
-		// load data from JSON file
-		// var url="data/prodes_rates.json";
-		// d3.json(url, graph.processData);
+		graph.processData(null, prodes_rates_file);
 	},
 	processData: function(error, data) {
 		utils.loadingShow(false);
